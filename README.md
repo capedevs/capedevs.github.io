@@ -86,9 +86,3 @@ Contributions to help implement these features are welcome!
 
 This project is licensed under the MIT License - see the LICENSE.md file for details.
 
-```
-
-```
-=======
-# capedevs.github.io
->>>>>>> origin/main
