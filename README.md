@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## Next.js Cape Software Community Blog Project
 
 This is a project aimed at migrating the Cape Software Community website to a static website. It is being built with [Next.js](https://nextjs.org/), a popular React framework for building web applications. The blog posts are written in Markdown and stored in the `posts` directory.
