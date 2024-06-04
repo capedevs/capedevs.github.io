@@ -2,7 +2,7 @@
 title: "Community-Driven Mentorship Programme"
 description: 'The Mentorship List is a community-driven effort built on top of "The Ultimate Developer Mentoring Guide"'
 author: "Benjamin Scholtz"
-date: "2024/01/01"
+date: "2024-01-01"
 ---
 
 ## Community-Driven Mentorship Programme
@@ -30,5 +30,3 @@ A collection of courses, tutorials, workshops, bootcamps, exercises, and tech ne
 ![Meetup 1](/images/Image1.jpg)
 
 ---
-
-[**Back Home**](/)

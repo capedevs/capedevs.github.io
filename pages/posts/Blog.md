@@ -28,4 +28,3 @@ The Mentor List is a community-driven effort built on top of "The Ultimate Devel
 
 
 
-[**Back Home**](/)
