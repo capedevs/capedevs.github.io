@@ -6,7 +6,6 @@ import Image from "next/image";
 import Link from "next/link";
 import path from "path";
 import { useState } from "react";
-import SubscribeButton from "../components/SubscribeButton";
 const marked = require("marked");
 
 export async function getStaticProps() {
@@ -134,7 +133,8 @@ export default function Home({ posts }) {
         </section>
       </main>
 
-      <SubscribeButton />
+      {/* <SubscribeButton />
+       */}
     </div>
   );
 }

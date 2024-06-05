@@ -1,10 +1,11 @@
-import "/styles/global.css";
 import "tailwindcss/tailwind.css";
-import Layout from "../components/Layout"; // Import the Layout component
+import Layout from "../components/Layout";
+import "../styles/global.css";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout> {/* Use the Layout component to wrap the Component */}
+    <Layout>
+      {" "}
       <Component {...pageProps} />
     </Layout>
   );

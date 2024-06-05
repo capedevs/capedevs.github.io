@@ -7,7 +7,7 @@ export default function Footer() {
           The Cape Software Community hosts a monthly meetup in Cape Town, South
           Africa
         </p>
-        <div className="flex justify-center mb-4">
+        {/*<div className="flex justify-center mb-4">
           <input
             type="email"
             placeholder="jamie@example.com"
@@ -22,6 +22,7 @@ export default function Footer() {
             Submit
           </button>
         </div>
+  */}
         <p className="text-gray-500">
           &copy; 2024 Cape Software Community. All rights reserved.
         </p>

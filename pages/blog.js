@@ -1,10 +1,10 @@
 import fs from "fs";
 import matter from "gray-matter";
+import Link from "next/link";
 import path from "path";
 import remarkHtml from "remark-html";
 import remarkParse from "remark-parse";
 import { unified } from "unified";
-import Link
 
 const Blog = ({ posts, content }) => {
   return (
@@ -16,12 +16,18 @@ const Blog = ({ posts, content }) => {
       {posts.map((post, index) => (
         <div key={index} className="latest-item">
           <h2 className="text-2xl font-semibold">{post.title}</h2>
-          <p className="text-gray-500 flex justify-between items-center">
-            {post.date}
+          <div className="flex justify-between items-center">
+            <p className="text-gray-500">
+              {post.date
+                ? new Date(post.date).toLocaleDateString()
+                : "No date provided"}
+            </p>
             <Link href={`/posts/${post.slug}`}>
-              <a className="text-blue-500 hover:underline">Read more →</a>
+              <a className="text-blue-500 no-underline hover:underline">
+                Read more →
+              </a>
             </Link>
-          </p>
+          </div>
           {/* Render individual post content */}
           <div
             className="prose"
@@ -39,10 +45,8 @@ export async function getStaticProps() {
   const fullPath = path.join(postsDirectory, "Blog.md");
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
-  // Parse metadata using gray-matter
   const { data, content: markdownContent } = matter(fileContents);
 
-  // Initialize posts array (empty if undefined)
   const posts = await Promise.all(
     (data.posts || []).map(async (post, index) => {
       const processedContent = await unified()
@@ -61,7 +65,6 @@ export async function getStaticProps() {
     })
   );
 
-  // Process the main content
   const processedContent = await unified()
     .use(remarkParse)
     .use(remarkHtml)
