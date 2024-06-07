@@ -1,6 +1,6 @@
 ## Next.js Cape Software Community Blog Project
 
-This is a project aimed at migrating the Cape Software Community website to a static website. It is being built with [Next.js](https://nextjs.org/), a popular React framework for building web applications. The blog posts are written in Markdown and stored in the `posts` directory.
+This is a project aimed at migrating the Cape Software Community website to a static website. It is being built with [Next.js](https://nextjs.org/), a popular React framework for building web applications. The blog posts are written in Markdown and stored in the `content` directory.
 
 The design and layout of the project are intentionally kept simple and modular to make it easy for other contributors to add features of their own. Additionally, the use of Markdown for blog posts allows anyone to easily add new posts to the blog.
 
@@ -51,15 +51,15 @@ bun dev
 ```
 
 5. Open http://localhost:3000 with your browser to see the result.
-   You can start editing the page by modifying `app/index.js`. The page auto-updates as you edit the file.
+   You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
 ## Adding a New Post
 
-To add a new post, create a new Markdown file in the `posts` directory. The frontmatter of the file should contain a `posts` array with the `title` and `content` of each post.
+To add a new post, create a new Markdown file in the `content` directory. The frontmatter of the file should contain a `posts` array with the `title` and `content` of each post.
 
 ## Customizing Styles
 
-To customize the styles of the blog posts, modify the CSS classes in the `Blog` component in `blog.js`.
+To customize the styles of the blog posts, modify the CSS classes in the `pages` directory in `posts/[slug].js` `pages/blog.js`.
 
 ## Built With
 
