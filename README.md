@@ -23,7 +23,7 @@ git clone https://github.com/yourusername/yourrepository.git# Next.js Blog Proje
 2. Navigate into the project directory:
 
 ```bash
-cd yourrepository
+cd capedevs
 ```
 
 3. Install the dependencies:
