@@ -57,7 +57,7 @@ bun dev
 
 ## Adding a New Post
 
-To add a new post, create a new Markdown file in the `content` directory. The frontmatter of the file should contain a `posts` array with the `title` and `content` of each post.
+To add a new post, create a new Markdown file in the `content` directory. The frontmatter of the file should contain a `posts` array with the `title`, `description`, `date`, and `content` of each post.
 
 ## Customizing Styles
 
