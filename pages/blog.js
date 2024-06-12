@@ -8,7 +8,7 @@ import { unified } from "unified";
 
 const Blog = ({ posts, content }) => {
   return (
-    <div className="p-4">
+    <div className="max-w-3xl mx-auto pt-24 px-4">
       {/* Render the processed HTML content */}
       <div className="prose" dangerouslySetInnerHTML={{ __html: content }} />
 

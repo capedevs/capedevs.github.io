@@ -5,8 +5,8 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="w-full py-6 bg-white shadow-md text-center">
-      <div className="container mx-auto flex justify-between items-center px-4 relative">
+    <header className="w-full h-16 bg-white shadow-md fixed top-0 left-0 z-50">
+      <div className="container mx-auto flex justify-between items-center h-full px-4">
         <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden">
           <img src="/menu-icon.png" alt="Menu Icon" />
         </button>

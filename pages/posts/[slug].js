@@ -57,7 +57,8 @@ export default function Post({ data, content }) {
   const shareUrl = `https://capedevs.github.io/posts/${data.slug}`;
 
   return (
-    <div className="prose prose-lg mx-auto mt-8">
+    <div className="prose prose-lg max-w-3xl mx-auto pt-24 px-4">
+      {" "}
       <Head>
         <title>{data.title}</title>
         <meta property="og:title" content={data.title} />

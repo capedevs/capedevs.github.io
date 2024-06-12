@@ -26,6 +26,7 @@ header {
 
 .prose {
   margin: 0 auto;
+  max-width: 60ch;
 }
 
 .latest-section {
