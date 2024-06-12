@@ -4,54 +4,86 @@ import { useState } from "react";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
+
   return (
     <header className="w-full h-16 bg-white shadow-md fixed top-0 left-0 z-50">
       <div className="container mx-auto flex justify-between items-center h-full px-4">
-        <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden">
-          <img src="/menu-icon.png" alt="Menu Icon" />
-        </button>
-        <nav
-          className={`flex space-x-4 ${isOpen ? "block" : "hidden"} lg:flex`}
-        >
-          <Link href="/" className="hover:underline font-semibold">
-            Home
-          </Link>
-          <a
-            href="https://www.meetup.com/cape-town-software-development-meetup/"
-            className="hover:underline font-semibold"
-          >
-            Meetup
-          </a>
-          <a
-            href="https://www.youtube.com/@CapeSoftwareCommunity"
-            className="hover:underline font-semibold"
-          >
-            YouTube
-          </a>
-          <Link href="/blog" className="hover:underline font-semibold">
-            Blog
-          </Link>
-        </nav>
-        <div className="text-2xl font-bold absolute left-1/2 transform -translate-x-1/2">
+        <div className="text-2xl font-bold absolute left-1/2 transform -translate-x-1/2 z-30">
           Cape Software Community
         </div>
-        <div
-          className={`flex space-x-4 items-center ${
-            isOpen ? "block" : "hidden"
-          } lg:flex`}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="lg:hidden absolute top-4 right-4 z-30"
         >
-          {/*<a href="#" className="hover:underline font-semibold">
-            Sign in
-          </a>
-           <button className="bg-blue-500 text-white px-4 py-2 rounded-lg">
-            <img
-              src="/user-logo.png"
-              alt="User logo"
-              className="h-4 w-4 mr-2 inline-block align-middle"
-            />
-            Subscribe
-          </button>
-        */}
+          <img
+            src={isOpen ? "/icons8-circled-x-32.png" : "/icons8-menu-32.png"}
+            alt={isOpen ? "Close Icon" : "Menu Icon"}
+          />
+        </button>
+
+        {/* Mobile navigation */}
+        <div
+          className={`fixed inset-0 z-20 bg-white bg-opacity-90 backdrop-blur-md flex flex-col items-center transform transition-transform duration-200 ease-in-out ${
+            isOpen ? "translate-y-16" : "-translate-y-full"
+          } lg:hidden`}
+        >
+          <nav className="flex flex-col items-center space-y-4 mt-8">
+            <Link
+              href="/"
+              className="hover:underline font-semibold"
+              onClick={handleLinkClick}
+            >
+              Home
+            </Link>
+            <a
+              href="https://www.meetup.com/cape-town-software-development-meetup/"
+              className="hover:underline font-semibold"
+              onClick={handleLinkClick}
+            >
+              Meetup
+            </a>
+            <a
+              href="https://www.youtube.com/@CapeSoftwareCommunity"
+              className="hover:underline font-semibold"
+              onClick={handleLinkClick}
+            >
+              YouTube
+            </a>
+            <Link
+              href="/blog"
+              className="hover:underline font-semibold"
+              onClick={handleLinkClick}
+            >
+              Blog
+            </Link>
+          </nav>
+        </div>
+
+        {/* Desktop navigation */}
+        <div className="hidden lg:block">
+          <nav className="flex space-x-4">
+            <Link href="/" className="hover:underline font-semibold">
+              Home
+            </Link>
+            <a
+              href="https://www.meetup.com/cape-town-software-development-meetup/"
+              className="hover:underline font-semibold"
+            >
+              Meetup
+            </a>
+            <a
+              href="https://www.youtube.com/@CapeSoftwareCommunity"
+              className="hover:underline font-semibold"
+            >
+              YouTube
+            </a>
+            <Link href="/blog" className="hover:underline font-semibold">
+              Blog
+            </Link>
+          </nav>
         </div>
       </div>
     </header>
