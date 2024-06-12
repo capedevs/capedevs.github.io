@@ -5,8 +5,8 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="w-full py-6 bg-white shadow-md">
-      <div className="container mx-auto flex justify-between items-center px-4">
+    <header className="w-full py-6 bg-white shadow-md text-center">
+      <div className="container mx-auto flex justify-between items-center px-4 relative">
         <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden">
           <img src="/menu-icon.png" alt="Menu Icon" />
         </button>
@@ -32,7 +32,7 @@ export default function Header() {
             Blog
           </Link>
         </nav>
-        <div className="text-2xl font-bold flex-grow text-center">
+        <div className="text-2xl font-bold absolute left-1/2 transform -translate-x-1/2">
           Cape Software Community
         </div>
         <div
