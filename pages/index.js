@@ -50,7 +50,7 @@ export default function Home({ posts }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex flex-col min-h-screen items-center bg-gray-50">
+    <div className="flex flex-col min-h-screen items-center bg-gray-50 pt-24">
       <main className="flex flex-col items-center py-12 text-center container mx-auto px-4">
         <h1 className="text-4xl font-bold mb-6 text-gray-800">
           The Cape Software Community hosts a monthly meetup in Cape Town, South
@@ -75,9 +75,7 @@ export default function Home({ posts }) {
                       />
                     </div>
                   )}
-                  <h3 className="text-xl font-bold">
-                    {post.data.title}
-                  </h3>
+                  <h3 className="text-xl font-bold">{post.data.title}</h3>
                   <p className="text-gray-700">
                     {post.data.description && post.data.description.length > 100
                       ? post.data.description.substring(0, 100) + "..."
