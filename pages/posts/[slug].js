@@ -10,8 +10,8 @@ import {
   EmailShareButton,
   FacebookIcon,
   FacebookShareButton,
-  TwitterIcon,
-  TwitterShareButton,
+  LinkedinIcon,
+  LinkedinShareButton,
   WhatsappIcon,
   WhatsappShareButton,
 } from "react-share";
@@ -58,7 +58,10 @@ export default function Post({ data, content }) {
 
   // Split the content at the first "READ MORE" section
   const readMoreMarker = "\n\n---\n\nREAD MORE\n\n---\n\n";
-  const [contentBeforeReadMore, contentAfterReadMore] = content.split(readMoreMarker, 2);
+  const [contentBeforeReadMore, contentAfterReadMore] = content.split(
+    readMoreMarker,
+    2
+  );
 
   return (
     <div className="prose prose-lg max-w-3xl mx-auto pt-24 px-4">
@@ -81,22 +84,24 @@ export default function Post({ data, content }) {
       </p>
       <p>Author: {data.author}</p>
 
-      <ReactMarkdown remarkPlugins={[remarkGfm]}>{contentBeforeReadMore}</ReactMarkdown>
+      <ReactMarkdown remarkPlugins={[remarkGfm]}>
+        {contentBeforeReadMore}
+      </ReactMarkdown>
       <div className="social-share-buttons flex justify-center space-x-4 mt-8">
         <FacebookShareButton url={shareUrl}>
           <FacebookIcon size={32} round />
         </FacebookShareButton>
-        <TwitterShareButton url={shareUrl}>
-          <TwitterIcon size={32} round />
-        </TwitterShareButton>
         <WhatsappShareButton url={shareUrl}>
           <WhatsappIcon size={32} round />
         </WhatsappShareButton>
+        <LinkedinShareButton url={shareUrl}>
+          <LinkedinIcon size={32} round />
+        </LinkedinShareButton>
         <EmailShareButton url={shareUrl}>
           <EmailIcon size={32} round />
         </EmailShareButton>
       </div>
-      
+
       <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
 
       {/* Render the "READ MORE" marker */}
@@ -105,9 +110,10 @@ export default function Post({ data, content }) {
       </ReactMarkdown>
 
       {contentAfterReadMore && (
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>{contentAfterReadMore}</ReactMarkdown>
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+          {contentAfterReadMore}
+        </ReactMarkdown>
       )}
-
     </div>
   );
 }
