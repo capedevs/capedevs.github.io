@@ -56,9 +56,12 @@ export default function Post({ data, content }) {
 
   const shareUrl = `https://capedevs.github.io/posts/${data.slug}`;
 
+  // Split the content at the first "READ MORE" section
+  const readMoreMarker = "\n\n---\n\nREAD MORE\n\n---\n\n";
+  const [contentBeforeReadMore, contentAfterReadMore] = content.split(readMoreMarker, 2);
+
   return (
     <div className="prose prose-lg max-w-3xl mx-auto pt-24 px-4">
-      {" "}
       <Head>
         <title>{data.title}</title>
         <meta property="og:title" content={data.title} />
@@ -77,7 +80,8 @@ export default function Post({ data, content }) {
           : "Invalid date"}
       </p>
       <p>Author: {data.author}</p>
-      <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+
+      <ReactMarkdown remarkPlugins={[remarkGfm]}>{contentBeforeReadMore}</ReactMarkdown>
       <div className="social-share-buttons flex justify-center space-x-4 mt-8">
         <FacebookShareButton url={shareUrl}>
           <FacebookIcon size={32} round />
@@ -92,7 +96,18 @@ export default function Post({ data, content }) {
           <EmailIcon size={32} round />
         </EmailShareButton>
       </div>
+      
       <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+
+      {/* Render the "READ MORE" marker */}
+      <ReactMarkdown remarkPlugins={[remarkGfm]}>
+        {"\n\n---\n\nREAD MORE\n\n---\n\n"}
+      </ReactMarkdown>
+
+      {contentAfterReadMore && (
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>{contentAfterReadMore}</ReactMarkdown>
+      )}
+
     </div>
   );
 }
