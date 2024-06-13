@@ -76,7 +76,6 @@ To customize the styles of the blog posts, modify the CSS classes in the `pages`
 
 This project is still under development. Here are some features that are planned for future releases:
 
-- **Responsive Design**: Improve the layout and design for mobile and smaller screens to enhance the user experience on all devices.
 - **Search Feature**: Implement a search feature to allow users to easily find specific posts.
 - **Authentication**: Set up user authentication to allow users to log in and interact with the blog in a personalized way.
 - **Subscription Feature**: Allow users to subscribe and unsubscribe to the blog to receive updates on new posts.
