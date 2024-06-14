@@ -81,7 +81,7 @@ export default function Post({ data, content }) {
       <p>{data.description}</p>
       <p className="text-gray-500 text-sm">
         {data.date && !isNaN(new Date(data.date))
-          ? format(new Date(data.date), "yyyy-MM-dd")
+          ? format(new Date(data.date), "MMM dd, yyyy")
           : "Invalid date"}
       </p>
       <p className="flex items-center">

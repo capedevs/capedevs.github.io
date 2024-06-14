@@ -83,7 +83,7 @@ export default function Home({ posts }) {
                   </p>
                   <p className="text-gray-500 text-sm">
                     {post.data.date && !isNaN(new Date(post.data.date))
-                      ? format(new Date(post.data.date), "yyyy-MM-dd")
+                      ? format(new Date(post.data.date), "MMM dd, yyyy")
                       : "Invalid date"}
                   </p>
                 </div>

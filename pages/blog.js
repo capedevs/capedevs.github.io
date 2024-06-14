@@ -19,7 +19,7 @@ const Blog = ({ posts, content }) => {
               <h2 className="text-2xl font-semibold mb-2">{post.title}</h2>
               <p>{post.description}</p>
               <div className="flex justify-between items-center text-gray-500 mb-4">
-                <p>{post.date ? new Date(post.date).toLocaleDateString() : "No date provided"}</p>
+              <p>{post.date ? new Date(post.date).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' }) : "No date provided"}</p>
                 <span className="text-blue-500 no-underline hover:underline">
                   Read more →
                 </span>
