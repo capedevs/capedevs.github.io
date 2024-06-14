@@ -62,7 +62,7 @@ export default function Home({ posts }) {
           </h2>
           {posts.slice(0, 3).map((post) => (
             <Link href={`/posts/${post.slug}`} key={post.slug} legacyBehavior>
-              <a className="block">
+              <a className="block p-6 bg-white rounded-lg border-gray-200 shadow-md hover:bg-gray-100">
                 <div className="latest-item p-6 bg-white rounded-lg shadow-md flex flex-col gap-4 text-left">
                   {post.firstImage && (
                     <div className="mb-4">
