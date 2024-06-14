@@ -25,7 +25,7 @@ A collection of courses, tutorials, workshops, bootcamps, exercises, and tech ne
 
 ---
 
-[**Hello, wolrd!**](/posts/HelloWorld)
+[**Hello, World!**](/posts/HelloWorld)
 
 ![Meetup 1](/images/Image1.jpg)
 
