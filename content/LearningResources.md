@@ -1,5 +1,5 @@
 ---
-title: "Learning Resources👩🏾‍🎓"
+title: "Learning Resources👨‍🎓"
 description: "A collection of courses, tutorials, workshops, boot camps, exercises, and tech news sources for software developers."
 date: "2024-03-01"
 author: "Benjamin Scholtz"
