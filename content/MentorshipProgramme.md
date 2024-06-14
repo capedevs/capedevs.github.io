@@ -5,8 +5,6 @@ author: "Benjamin Scholtz"
 date: "2024-01-01"
 ---
 
-## Community-Driven Mentorship Programme
-
 The [Mentor List](https://www.developermentoring.guide/finding-a-mentor/mentor-list?ref=capesoftwarecommunity.co.za) is a community-driven effort built on top of ["The Ultimate Developer Mentoring Guide"](https://www.developermentoring.guide/?ref=capesoftwarecommuntiy.co.za) that connects those seeking mentorship with willing mentors. Mentors can submit a PR to add themselves to the list in the mentors.json file, and mentees are responsible for reaching out to a mentor they feel is the best fit. Many of the mentors hang out in the [ZATech](https://zatech.co.za/?ref=capesoftwarecommunity.co.za) Slack #mentoring channel.
 
 Are you keen for mentorship? Check out the [How to Find a Mentor](https://www.developermentoring.guide/finding-a-mentor//how-to-find-a-mentor?ref=capesoftwarecommunity.co.za) page.

@@ -5,7 +5,11 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      blur: {
+        sm: "1px",
+      },
+    },
   },
   plugins: [require("@tailwindcss/typography")],
 };

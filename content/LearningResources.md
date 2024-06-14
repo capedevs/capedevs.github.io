@@ -69,6 +69,8 @@ A coding practice website for all programming levels - Join Now
 
 [**Hacker News**](https://news.ycombinator.com/?ref=capesoftwarecommunity.co.za)
 
+Everything computer science and entrepreneurship
+
 ---
 
 READ MORE

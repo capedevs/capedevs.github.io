@@ -33,28 +33,28 @@ export default function Header() {
           <nav className="flex flex-col items-center space-y-4 mt-8">
             <Link
               href="/"
-              className="hover:underline font-semibold"
+              className="border-b-2 border-transparent hover:border-current font-semibold"
               onClick={handleLinkClick}
             >
               Home
             </Link>
             <a
               href="https://www.meetup.com/cape-town-software-development-meetup/"
-              className="hover:underline font-semibold"
+              className="border-b-2 border-transparent hover:border-current font-semibold"
               onClick={handleLinkClick}
             >
               Meetup
             </a>
             <a
               href="https://www.youtube.com/@CapeSoftwareCommunity"
-              className="hover:underline font-semibold"
+              className="border-b-2 border-transparent hover:border-current font-semibold"
               onClick={handleLinkClick}
             >
               YouTube
             </a>
             <Link
               href="/blog"
-              className="hover:underline font-semibold"
+              className="border-b-2 border-transparent hover:border-current font-semibold"
               onClick={handleLinkClick}
             >
               Blog
@@ -65,22 +65,22 @@ export default function Header() {
         {/* Desktop navigation */}
         <div className="hidden lg:block">
           <nav className="flex space-x-4">
-            <Link href="/" className="hover:underline font-semibold">
+            <Link href="/" className="border-b-2 border-transparent hover:border-current font-semibold">
               Home
             </Link>
             <a
               href="https://www.meetup.com/cape-town-software-development-meetup/"
-              className="hover:underline font-semibold"
+              className="border-b-2 border-transparent hover:border-current font-semibold"
             >
               Meetup
             </a>
             <a
               href="https://www.youtube.com/@CapeSoftwareCommunity"
-              className="hover:underline font-semibold"
+              className="border-b-2 border-transparent hover:border-current font-semibold"
             >
               YouTube
             </a>
-            <Link href="/blog" className="hover:underline font-semibold">
+            <Link href="/blog" className="border-b-2 border-transparent hover:border-current font-semibold">
               Blog
             </Link>
           </nav>
