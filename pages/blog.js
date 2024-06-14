@@ -17,6 +17,7 @@ const Blog = ({ posts, content }) => {
           <Link key={index} href={`/posts/${post.slug}`} legacyBehavior>
             <a className="block p-6 bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100">
               <h2 className="text-2xl font-semibold mb-2">{post.title}</h2>
+              <p>{post.description}</p>
               <div className="flex justify-between items-center text-gray-500 mb-4">
                 <p>{post.date ? new Date(post.date).toLocaleDateString() : "No date provided"}</p>
                 <span className="text-blue-500 no-underline hover:underline">
@@ -54,25 +55,26 @@ export async function getStaticProps() {
     files.map(async (filename) => {
       const filePath = path.join(postsDirectory, filename);
       const fileContents = fs.readFileSync(filePath, "utf8");
-
+  
       const { data, content } = matter(fileContents);
-
+  
       const processedContent = await unified()
         .use(remarkParse)
         .use(remarkHtml)
         .process(content);
       const contentHtml = processedContent.toString();
-
+  
       return {
         title: data.title || "Untitled",
         date: data.date || null,
         slug: filename.replace(/\.md$/, ""),
         excerpt: data.excerpt || "",
+        description: data.description || "",
         content: contentHtml,
       };
     })
   );
-
+  
   return {
     props: {
       posts,
