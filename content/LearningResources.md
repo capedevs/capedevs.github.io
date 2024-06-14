@@ -31,7 +31,7 @@ Learn to Code - For Free
 
 ---
 
-[**Micosoft Learn: Build skills that open doors in your career**](https://learn.microsoft.com/en-gb/?ref=capesoftwarecommunity.co.za)
+[**Microsoft Learn: Build skills that open doors in your career**](https://learn.microsoft.com/en-gb/?ref=capesoftwarecommunity.co.za)
 
 Gain technical skills through documentation and training
 
@@ -84,6 +84,3 @@ The Mentor List is a community-driven effort built on top of "The Ultimate Devel
 [**Hello, world!**](/posts/HelloWorld)
 
 ![Meetup 1](/images/Image1.jpg)
-
----
-

@@ -3,7 +3,9 @@ import { DiscussionEmbed } from "disqus-react";
 import fs from "fs";
 import matter from "gray-matter";
 import Head from "next/head";
+import Image from "next/image";
 import path from "path";
+import { FaUser } from "react-icons/fa";
 import ReactMarkdown from "react-markdown";
 import {
   EmailIcon,
@@ -82,9 +84,27 @@ export default function Post({ data, content }) {
           ? format(new Date(data.date), "yyyy-MM-dd")
           : "Invalid date"}
       </p>
-      <p>Author: {data.author}</p>
+      <p className="flex items-center">
+        <FaUser className="mr-2" /> {data.author}
+      </p>
 
-      <ReactMarkdown remarkPlugins={[remarkGfm]}>
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
+        components={{
+          img: ({ node, ...props }) => (
+            <span className="my-4">
+              <Image
+                src={props.src}
+                alt={props.alt}
+                width={500}
+                height={300}
+                layout="responsive"
+                objectFit="contain"
+              />
+            </span>
+          ),
+        }}
+      >
         {contentBeforeReadMore}
       </ReactMarkdown>
       <div className="social-share-buttons flex justify-center space-x-4 mt-8">
@@ -110,7 +130,23 @@ export default function Post({ data, content }) {
       </ReactMarkdown>
 
       {contentAfterReadMore && (
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm]}
+          components={{
+            img: ({ node, ...props }) => (
+              <span className="my-4">
+                <Image
+                  src={props.src}
+                  alt={props.alt}
+                  width={250}
+                  height={150}
+                  layout="responsive"
+                  objectFit="contain"
+                />
+              </span>
+            ),
+          }}
+        >
           {contentAfterReadMore}
         </ReactMarkdown>
       )}
