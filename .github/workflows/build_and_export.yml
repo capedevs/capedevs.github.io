@@ -34,7 +34,6 @@ jobs:
 
       - name: Next.js Capedevs Site
         run: npm run build
-        run: npm run export
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
