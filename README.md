@@ -29,8 +29,6 @@ cd capedevs
 3. Install the dependencies:
 
 ```bash
-npm install
-# or 
 npm install --legacy-peer-deps
 # or
 yarn install
