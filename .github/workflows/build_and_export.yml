@@ -1,4 +1,4 @@
-name: Build and Export Next.js Site
+name: Next.js Capedev Site
 
 on:
   push:
@@ -32,7 +32,8 @@ jobs:
         run: npm run lint
         continue-on-error: true
 
-      - name: Build and Export Next.js App
+      - name: Next.js Capedevs Site
+        run: npm run build
         run: npm run export
 
       - name: Upload artifact
