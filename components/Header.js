@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -18,9 +19,11 @@ export default function Header() {
           onClick={() => setIsOpen(!isOpen)}
           className="lg:hidden absolute top-4 right-4 z-30"
         >
-          <img
+          <Image
             src={isOpen ? "/icons8-circled-x-32.png" : "/icons8-menu-32.png"}
             alt={isOpen ? "Close Icon" : "Menu Icon"}
+            width={32}
+            height={32}
           />
         </button>
 

@@ -14,7 +14,7 @@ export default function Footer() {
             className="px-4 py-2 border border-gray-300 rounded-l focus:outline-none"
           />
           <button className="px-4 py-2 bg-blue-500 text-white rounded-r">
-            <img
+            <Image
               src="/user-logo.png"
               alt="User logo"
               className="h-4 w-4 mr-2 inline-block align-middle"
