@@ -1,0 +1,42 @@
+name: Build and Export Next.js Site
+
+on:
+  push:
+    branches: 
+      - main
+
+jobs:
+  build_and_export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install Dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Run ESLint
+        run: npm run lint
+        continue-on-error: true
+
+      - name: Build and Export Next.js App
+        run: npm run export
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Built site
+          path: out/
