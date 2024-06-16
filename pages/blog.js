@@ -6,15 +6,9 @@ import remarkHtml from "remark-html";
 import remarkParse from "remark-parse";
 import { unified } from "unified";
 
-const Blog = ({ posts, content }) => {
+const Blog = ({ posts }) => {
   return (
     <div className="max-w-7xl mx-auto pt-24 px-4">
-      {content && (
-        <div
-          className="prose mb-8"
-          dangerouslySetInnerHTML={{ __html: content }}
-        />
-      )}
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {posts.map((post, index) => (
           <Link key={index} href={`/posts/${post.slug}`} legacyBehavior>
@@ -46,19 +40,6 @@ const Blog = ({ posts, content }) => {
 
 export async function getStaticProps() {
   const postsDirectory = path.join(process.cwd(), "content");
-  const blogFilePath = path.join(process.cwd(), "pages/posts", "blog.md");
-
-  let blogContentHtml = "";
-
-  if (fs.existsSync(blogFilePath)) {
-    const blogFileContents = fs.readFileSync(blogFilePath, "utf8");
-    const { content: blogContent } = matter(blogFileContents);
-    const processedBlogContent = await unified()
-      .use(remarkParse)
-      .use(remarkHtml)
-      .process(blogContent);
-    blogContentHtml = processedBlogContent.toString();
-  }
 
   const files = fs
     .readdirSync(postsDirectory)
@@ -91,7 +72,6 @@ export async function getStaticProps() {
   return {
     props: {
       posts,
-      content: blogContentHtml,
     },
   };
 }
