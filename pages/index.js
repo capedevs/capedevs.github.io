@@ -64,8 +64,7 @@ export default function Home({ posts }) {
           </h2>
           {posts.slice(0, 3).map((post) => (
             <Link href={`/posts/${post.slug}`} key={post.slug} legacyBehavior>
-              <a className="block p-6 bg-white rounded-lg border-gray-200 shadow-md hover:bg-gray-100">
-                <div className="latest-item p-6 bg-white rounded-lg shadow-md flex flex-col gap-4 text-left">
+              <a className="block p-6 bg-white rounded-lg border-gray-200 mb-4 shadow-md hover:bg-gray-100">
                   <h3 className="text-xl font-bold">{post.data.title}</h3>
                   <p className="text-gray-700">
                     {post.data.description && post.data.description.length > 100
@@ -77,7 +76,6 @@ export default function Home({ posts }) {
                       ? format(new Date(post.data.date), "MMM dd, yyyy")
                       : "Invalid date"}
                   </p>
-                </div>
               </a>
             </Link>
           ))}

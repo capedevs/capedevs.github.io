@@ -59,6 +59,10 @@ header {
   color: #555;
 }
 
+.no-underline {
+  text-decoration: none;
+}
+
 hr {
   border: none;
   border-top: 1px solid #e5e7eb;
@@ -67,4 +71,20 @@ hr {
 
 footer p {
   color: #555;
+}
+
+/* Revised styles for the gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.gallery-item {
+  width: 100%;
+  overflow: hidden;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

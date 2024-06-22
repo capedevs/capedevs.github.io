@@ -2,11 +2,11 @@ name: Next.js Capedev Site
 
 on:
   push:
-    branches: 
+    branches:
       - main
 
 jobs:
-  build_and_export:
+  build_and_deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -32,11 +32,14 @@ jobs:
         run: npm run lint
         continue-on-error: true
 
-      - name: Next.js Capedevs Site
+      - name: Build Next.js Site
         run: npm run build
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v2
+      - name: Export Next.js Site
+        run: npm run export
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          name: Built site
-          path: out/
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: out

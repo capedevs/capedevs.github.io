@@ -55,13 +55,6 @@ export default function Header() {
             >
               YouTube
             </a>
-            <Link
-              href="/blog"
-              className="border-b-2 border-transparent hover:border-current font-semibold"
-              onClick={handleLinkClick}
-            >
-              Blog
-            </Link>
           </nav>
         </div>
 
@@ -83,9 +76,6 @@ export default function Header() {
             >
               YouTube
             </a>
-            <Link href="/blog" className="border-b-2 border-transparent hover:border-current font-semibold">
-              Blog
-            </Link>
           </nav>
         </div>
       </div>

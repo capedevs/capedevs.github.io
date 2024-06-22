@@ -6,7 +6,8 @@ import Head from "next/head";
 import Image from "next/image";
 import path from "path";
 import { FaUser } from "react-icons/fa";
-import ReactMarkdown from "react-markdown";
+import dynamic from "next/dynamic";
+import Link from "next/link";
 import {
   EmailIcon,
   EmailShareButton,
@@ -18,6 +19,8 @@ import {
   WhatsappShareButton,
 } from "react-share";
 import remarkGfm from "remark-gfm";
+
+const ReactMarkdown = dynamic(() => import('react-markdown'), { ssr: false });
 
 export async function getStaticPaths() {
   const contentDirectory = path.join(process.cwd(), "content");
@@ -40,15 +43,32 @@ export async function getStaticProps({ params }) {
 
   const parsedMarkdown = matter(markdownWithMetadata);
 
+  const contentDirectory = path.join(process.cwd(), "content");
+  const filenames = fs.readdirSync(contentDirectory);
+
+  const otherPosts = filenames
+    .filter((filename) => filename !== params.slug + ".md")
+    .map((filename) => {
+      const markdownWithMetadata = fs
+        .readFileSync(path.join("content", filename))
+        .toString();
+      const parsedMarkdown = matter(markdownWithMetadata);
+      return {
+        slug: filename.replace(/\.md$/, ""),
+        data: parsedMarkdown.data,
+      };
+    });
+
   return {
     props: {
       content: parsedMarkdown.content,
       data: parsedMarkdown.data,
+      otherPosts: otherPosts.slice(0, 3),
     },
   };
 }
 
-export default function Post({ data, content }) {
+export default function Post({ data, content, otherPosts }) {
   const disqusShortname = "https-capedevs-github-io";
   const disqusConfig = {
     url: `https://capedevs.github.io/posts/${data.slug}`,
@@ -58,12 +78,18 @@ export default function Post({ data, content }) {
 
   const shareUrl = `https://capedevs.github.io/posts/${data.slug}`;
 
-  // Split the content at the first "READ MORE" section
-  const readMoreMarker = "\n\n---\n\nREAD MORE\n\n---\n\n";
-  const [contentBeforeReadMore, contentAfterReadMore] = content.split(
-    readMoreMarker,
-    2
-  );
+  // Extract images from content
+  const imagePattern = /!\[.*?\]\((.*?)\)/g;
+  const imageMatches = content.match(imagePattern);
+  const images = imageMatches
+    ? imageMatches.map((match) => {
+        const urlMatch = match.match(/\((.*?)\)/);
+        return urlMatch ? urlMatch[1] : null;
+      }).filter((url) => url !== null)
+    : [];
+
+  // Remove images from content for markdown rendering
+  const contentWithoutImages = content.replace(imagePattern, '');
 
   return (
     <div className="prose prose-lg max-w-3xl mx-auto pt-24 px-4">
@@ -88,25 +114,25 @@ export default function Post({ data, content }) {
         <FaUser className="mr-2" /> {data.author}
       </p>
 
-      <ReactMarkdown
-        remarkPlugins={[remarkGfm]}
-        components={{
-          img: ({ node, ...props }) => (
-            <span className="my-4">
+      <ReactMarkdown remarkPlugins={[remarkGfm]}>{contentWithoutImages}</ReactMarkdown>
+
+      {images.length > 0 && (
+        <div className="gallery-grid mt-8">
+          {images.map((src, index) => (
+            <div key={index} className="gallery-item">
               <Image
-                src={props.src}
-                alt={props.alt}
+                src={src}
+                alt={`Image ${index + 1}`}
                 width={500}
                 height={300}
                 layout="responsive"
                 objectFit="contain"
               />
-            </span>
-          ),
-        }}
-      >
-        {contentBeforeReadMore}
-      </ReactMarkdown>
+            </div>
+          ))}
+        </div>
+      )}
+
       <div className="social-share-buttons flex justify-center space-x-4 mt-8">
         <FacebookShareButton url={shareUrl}>
           <FacebookIcon size={32} round />
@@ -124,32 +150,28 @@ export default function Post({ data, content }) {
 
       <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
 
-      {/* Render the "READ MORE" marker */}
-      <ReactMarkdown remarkPlugins={[remarkGfm]}>
-        {"\n\n---\n\nREAD MORE\n\n---\n\n"}
-      </ReactMarkdown>
-
-      {contentAfterReadMore && (
-        <ReactMarkdown
-          remarkPlugins={[remarkGfm]}
-          components={{
-            img: ({ node, ...props }) => (
-              <span className="my-4">
-                <Image
-                  src={props.src}
-                  alt={props.alt}
-                  width={250}
-                  height={150}
-                  layout="responsive"
-                  objectFit="contain"
-                />
-              </span>
-            ),
-          }}
-        >
-          {contentAfterReadMore}
-        </ReactMarkdown>
-      )}
+      <section className="w-full mb-12 text-left">
+        <h2 className="text-2xl font-semibold text-left text-gray-800 mb-4">
+          READ MORE
+        </h2>
+        {otherPosts.map((post) => (
+          <Link href={`/posts/${post.slug}`} key={post.slug} legacyBehavior>
+            <a className="block p-6 bg-white rounded-lg border-gray-200 shadow-md hover:bg-gray-100 mb-6 no-underline">
+              <h3 className="text-xl font-bold">{post.data.title}</h3>
+              <p className="text-gray-700">
+                {post.data.description && post.data.description.length > 100
+                  ? post.data.description.substring(0, 100) + "..."
+                  : post.data.description}
+              </p>
+              <p className="text-gray-500 text-sm">
+                {post.data.date && !isNaN(new Date(post.data.date))
+                  ? format(new Date(post.data.date), "MMM dd, yyyy")
+                  : "Invalid date"}
+              </p>
+            </a>
+          </Link>
+        ))}
+      </section>
     </div>
   );
 }

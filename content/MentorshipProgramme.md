@@ -12,19 +12,3 @@ Are you keen for mentorship? Check out the [How to Find a Mentor](https://www.de
 Are you a willing mentor? Check out the [How to Become a Mentor](https://www.developermentoring.guide/finding-a-mentor/how-to-become-a-mentor?ref=capesoftwarecommunity.co.za) page.
 
 ---
-
-READ MORE
-
----
-
-[**Learning Resources**](/posts/LearningResources)👩🏾‍🎓
-
-A collection of courses, tutorials, workshops, bootcamps, exercises, and tech news sources
-
----
-
-[**Hello, World!**](/posts/HelloWorld)
-
-![Meetup 1](/images/Image1.jpg)
-
----

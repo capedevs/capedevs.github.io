@@ -72,17 +72,3 @@ A coding practice website for all programming levels - Join Now
 Everything computer science and entrepreneurship
 
 ---
-
-READ MORE
-
----
-
-[**Community-Driven Mentorship Programme**](/posts/MentorshipProgramme)
-
-The Mentor List is a community-driven effort built on top of "The Ultimate Developer Mentoring Guide"
-
----
-
-[**Hello, world!**](/posts/HelloWorld)
-
-![Meetup 1](/images/Image1.jpg)
