@@ -6,6 +6,6 @@ author: "Benjamin Scholtz"
 authorImage: ""
 ---
 
-![Meetup 1](/capedevs.github.io/images/Image.png)
+![Meetup 1](images/Image.png)
 
 ---
