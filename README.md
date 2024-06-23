@@ -57,11 +57,10 @@ bun dev
 
 To add a new post, create a new Markdown file in the `content` directory. The frontmatter of the file should contain a `posts` array with the `title`, `description`, `date`, and `content` of each post.
 
- After creating the file, add the newly created post by updating `pages/posts/blog.md` so it can be added to the list of posts/articles in `blog` page.
 
 ## Customizing Styles
 
-To customize the styles of the blog posts, modify the CSS classes in the `pages` directory in `posts/[slug].js` `pages/blog.js`.
+To customize the styles of the blog posts, modify the CSS classes in the `pages` directory in `posts/[slug].js` 
 
 ## Built With
 
