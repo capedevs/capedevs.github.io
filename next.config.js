@@ -17,7 +17,6 @@ const nextConfig = {
       { hostname: "sololearn.com" },
     ],
   },
-  output: "export",
   basePath: '/capedevs.github.io',
   assetPrefix: '/capedevs.github.io',
 };
