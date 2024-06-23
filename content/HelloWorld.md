@@ -6,6 +6,6 @@ author: "Benjamin Scholtz"
 authorImage: ""
 ---
 
-![Meetup 1](/images/Image1.jpg)
+![Meetup 1](/images/Images.png)
 
 ---
