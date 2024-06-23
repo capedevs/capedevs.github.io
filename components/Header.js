@@ -20,7 +20,7 @@ export default function Header() {
           className="lg:hidden absolute top-4 right-4 z-30"
         >
           <Image
-            src={isOpen ? "/icons8-circled-x-32.png" : "/icons8-menu-32.png"}
+            src={isOpen ? '/icons8-circled-x-32.png' : '/icons8-menu-32.png'}
             alt={isOpen ? "Close Icon" : "Menu Icon"}
             width={32}
             height={32}
