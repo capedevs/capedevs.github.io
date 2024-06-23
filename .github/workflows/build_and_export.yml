@@ -41,6 +41,9 @@ jobs:
       - name: Verify Build Output
         run: ls -la out
 
+      - name: Copy 404.html to Output Directory
+        run: cp public/404.html out/404.html
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
