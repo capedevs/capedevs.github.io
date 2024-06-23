@@ -35,7 +35,7 @@ export default function Header() {
         >
           <nav className="flex flex-col items-center space-y-4 mt-8">
             <Link
-              href="/capedevs.github.io/"
+              href="/"
               className="border-b-2 border-transparent hover:border-current font-semibold"
               onClick={handleLinkClick}
             >
@@ -61,7 +61,7 @@ export default function Header() {
         {/* Desktop navigation */}
         <div className="hidden lg:block">
           <nav className="flex space-x-4">
-            <Link href="/capedevs.github.io/" className="border-b-2 border-transparent hover:border-current font-semibold">
+            <Link href="/" className="border-b-2 border-transparent hover:border-current font-semibold">
               Home
             </Link>
             <a
