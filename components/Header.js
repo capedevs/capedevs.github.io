@@ -20,7 +20,7 @@ export default function Header() {
           className="lg:hidden absolute top-4 right-4 z-30"
         >
           <Image
-            src={isOpen ? '/icons8-circled-x-32.png' : '/icons8-menu-32.png'}
+            src={isOpen ? '/capedevs.github.io/icons8-circled-x-32.png' : '/capedevs.github.io/icons8-menu-32.png'}
             alt={isOpen ? "Close Icon" : "Menu Icon"}
             width={32}
             height={32}
@@ -35,7 +35,7 @@ export default function Header() {
         >
           <nav className="flex flex-col items-center space-y-4 mt-8">
             <Link
-              href="/"
+              href="/capedevs.github.io/"
               className="border-b-2 border-transparent hover:border-current font-semibold"
               onClick={handleLinkClick}
             >
@@ -61,7 +61,7 @@ export default function Header() {
         {/* Desktop navigation */}
         <div className="hidden lg:block">
           <nav className="flex space-x-4">
-            <Link href="/" className="border-b-2 border-transparent hover:border-current font-semibold">
+            <Link href="/capedevs.github.io/" className="border-b-2 border-transparent hover:border-current font-semibold">
               Home
             </Link>
             <a
