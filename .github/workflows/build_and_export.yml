@@ -41,6 +41,13 @@ jobs:
       - name: Verify Build Output
         run: ls -la out
 
+      - name: Print Directory Structure
+        run: find out
+
+      - name: Check HTML Files
+        run: cat out/index.html
+
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
