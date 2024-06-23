@@ -121,7 +121,7 @@ export default function Post({ data, content, otherPosts }) {
           {images.map((src, index) => (
             <div key={index} className="gallery-item">
               <Image
-                src={src}
+                src={`/capedevs.github.io${src}`}
                 alt={`Image ${index + 1}`}
                 width={500}
                 height={300}
@@ -155,7 +155,7 @@ export default function Post({ data, content, otherPosts }) {
           READ MORE
         </h2>
         {otherPosts.map((post) => (
-          <Link href={`/posts/${post.slug}`} key={post.slug} legacyBehavior>
+          <Link href={`/capedevs.github.io/posts/${post.slug}`} key={post.slug} legacyBehavior>
             <a className="block p-6 bg-white rounded-lg border-gray-200 shadow-md hover:bg-gray-100 mb-6 no-underline">
               <h3 className="text-xl font-bold">{post.data.title}</h3>
               <p className="text-gray-700">
