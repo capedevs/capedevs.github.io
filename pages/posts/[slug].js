@@ -121,7 +121,7 @@ export default function Post({ data, content, otherPosts }) {
           {images.map((src, index) => (
             <div key={index} className="gallery-item">
               <Image
-                src={`/capedevs.github.io/images${src}`}
+                src={`/images${src}`}
                 alt={`Image ${index + 1}`}
                 width={500}
                 height={300}
