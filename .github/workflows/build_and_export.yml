@@ -38,9 +38,6 @@ jobs:
       - name: Build Next.js Site
         run: npm run build
 
-      - name: Export Next.js Site
-        run: npm run export
-
       - name: Verify Build Output
         run: ls -la out
 
