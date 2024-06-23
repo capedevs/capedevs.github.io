@@ -18,8 +18,7 @@ const nextConfig = {
     ],
   },
   output: 'export',
-  basePath: '',
-  assetPrefix: '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/' : '',
   trailingSlash: true,
 };
 
