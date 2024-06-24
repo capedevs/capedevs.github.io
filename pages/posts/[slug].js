@@ -61,6 +61,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
+      slug: params.slug,
       content: parsedMarkdown.content,
       data: parsedMarkdown.data,
       otherPosts: otherPosts.slice(0, 3),
@@ -68,7 +69,7 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default function Post({ data, content, otherPosts }) {
+export default function Post({ data, content, otherPosts, slug }) {
   const disqusShortname = "https-capedevs-github-io";
   const disqusConfig = {
     url: `https://capedevs.github.io/posts/${data.slug}`,
