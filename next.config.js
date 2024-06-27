@@ -18,8 +18,6 @@ const nextConfig = {
     ],
   },
   output: 'export',
-  basePath: '/capedevs.github.io',
-  assetPrefix: '/capedevs.github.io/',
   trailingSlash: true,
 };
 
