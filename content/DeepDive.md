@@ -1,7 +1,7 @@
 ---
 title: "Finding a Peak in an Unsorted List: A Deep Dive"
 description: "I struggled with a coding assessment, so I decided to practice and write a tutorial to enhance my problem-solving skills. The tutorial includes clear explanations, Python code implementations, and practical examples."
-date: "2024-Jul-04"
+date: "2024-07-04"
 author: "Simangaliso Vilakazi"
 ---
 
