@@ -1,4 +1,9 @@
-## Finding a Peak in an Unsorted List: A Deep Dive
+---
+title: "A Deep Dive"
+description: "Finding a Peak in an Unsorted List"
+date: "2024-Jul-04"
+author: "Simangaliso Vilakazi"
+---
 
 ## Introduction
 
