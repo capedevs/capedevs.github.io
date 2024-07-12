@@ -1,11 +1,11 @@
 ---
 title: "Hello,world!"
 description: "Come see how our latest meetup went"
-date: "2023-Dec-23"
+date: "2023-12-23"
 author: "Benjamin Scholtz"
 authorImage: ""
 ---
 
-![Meetup 1](/capedevs.github.io/images/Images.png)
+![Meetup 1](/images/Images.png)
 
 ---
