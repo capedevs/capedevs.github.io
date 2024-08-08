@@ -66,6 +66,7 @@ export default function Header() {
         </div>
 
         {/* Desktop navigation */}
+        {/* TODO Remove duplicated code */}
         <div className="hidden lg:block">
           <nav className="flex space-x-4">
             <Link href="/" className="border-b-2 border-transparent hover:border-current font-semibold">
@@ -82,6 +83,13 @@ export default function Header() {
               className="border-b-2 border-transparent hover:border-current font-semibold"
             >
               YouTube
+            </a>
+            <a
+              href="https://github.com/capedevs"
+              className="border-b-2 border-transparent hover:border-current font-semibold"
+              onClick={handleLinkClick}
+            >
+              GitHub
             </a>
           </nav>
         </div>
