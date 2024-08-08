@@ -55,6 +55,13 @@ export default function Header() {
             >
               YouTube
             </a>
+            <a
+                href="https://github.com/capedevs"
+                className="border-b-2 border-transparent hover:border-current font-semibold"
+                onClick={handleLinkClick}
+            >
+                GitHub
+            </a>
           </nav>
         </div>
 
